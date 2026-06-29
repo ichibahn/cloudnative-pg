@@ -29,7 +29,6 @@ import (
 	apiv1 "github.com/cloudnative-pg/cloudnative-pg/api/v1"
 	schemeBuilder "github.com/cloudnative-pg/cloudnative-pg/internal/scheme"
 	"github.com/cloudnative-pg/cloudnative-pg/pkg/postgres"
-	"github.com/cloudnative-pg/cloudnative-pg/pkg/reconciler/replicaclusterswitch/conditions"
 	"github.com/cloudnative-pg/cloudnative-pg/pkg/utils"
 
 	. "github.com/onsi/ginkgo/v2"
@@ -112,7 +111,6 @@ var _ = Describe("reconcileDemotionToken", func() {
 				DemotionToken:  storedToken,
 			},
 		}
-		conditions.SetDesignatedPrimaryTransitionCompleted(cluster)
 		return cluster
 	}
 
